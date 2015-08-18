@@ -26,12 +26,20 @@ shinyUI(fluidPage(
   fluidRow(
     column(4,
            img(src = "wine.jpg", width = 212, height = 320, style="display: block; margin-left: auto; margin-right: auto;" )),
-    column(8,
+    column(4,
+           h1("Wine classifier",align="center"),
+           br(),
+           p("This application determines class of wine using random forest model based on \"Wine recognition database\""),
+           br(),
+           em("Enter measured parameters of wine with sliders and press \"Predict Class\" button."),
            br(),
            br(),
-           submitButton("Predict Class"),
-           br(),
-           verbatimTextOutput("predictedClass"))
+           verbatimTextOutput("predictedClass"),
+           div(actionButton("calcStart","Predict Class")),
+           tags$style(type='text/css', "#calcStart{ display: block; margin-left: auto; margin-right: auto; }")
+           ),
+    column(4,
+           img(src = "wineM.jpg", width = 212, height = 320, style="display: block; margin-left: auto; margin-right: auto;" ))
   ),
   fluidRow(
     column(4,
