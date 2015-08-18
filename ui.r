@@ -26,7 +26,12 @@ shinyUI(fluidPage(
   fluidRow(
     column(4,
            img(src = "wine.jpg", width = 212, height = 320, style="display: block; margin-left: auto; margin-right: auto;" )),
-    column(8)
+    column(8,
+           br(),
+           br(),
+           submitButton("Predict Class"),
+           br(),
+           verbatimTextOutput("predictedClass"))
   ),
   fluidRow(
     column(4,
